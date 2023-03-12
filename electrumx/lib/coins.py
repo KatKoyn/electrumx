@@ -4074,3 +4074,21 @@ class Lbry(Coin):
     TX_PER_BLOCK = 43
     RPC_PORT = 9245
     REORG_LIMIT = 5000
+
+class Nyancoin(AuxPowMixin, Coin):
+    NAME = "KatKoyn"
+    SHORTNAME = "KAT"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("2D")
+    P2SH_VERBYTES = [bytes.fromhex("05")]
+    WIF_BYTE = bytes.fromhex("AD")
+    GENESIS_HASH = ('b477d9bc0721a1b96547495404583d68'
+                    '123f471fdd1d4058a9adff2fa7452298')
+    TX_COUNT = 4600000
+    TX_COUNT_HEIGHT = 4100000
+    TX_PER_BLOCK = 20
+    REORG_LIMIT = 10
+    RPC_PORT = 33700
+    DESERIALIZER = lib_tx.DeserializerAuxPowSegWit
